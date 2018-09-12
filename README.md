@@ -64,4 +64,49 @@ box-sizing: border-box 是IE盒子模型<br>
 ```
 可以看到1和2,2和3之间的间距不是50px，发生了边距重叠是取了它们之间的最大值30px。<br>
 空元素的边界重叠<br>
-假设有一个空元素，它有外边距，但是没有边框或填充。在这种情况下，上外边距与下外边距就碰到了一起，它们会发生合并：
+假设有一个空元素，它有外边距，但是没有边框或填充。在这种情况下，上外边距与下外边距就碰到了一起，它们会发生合并：<br>
+
+BFC原理<br>
+解决上述问题的其中一个办法就是创建BFC。BFC的全称为Block Formatting Context，即块级格式化上下文。一个BFC有如下特性：<br>
+处于同一个BFC中的元素相互影响，可能会发生margin collapse；<br>
+BFC在页面上是一个独立的容器，容器里面的子元素不会影响到外面的元素，反之亦然；<br>
+计算BFC的高度时，考虑BFC所包含的所有元素，包括浮动元素也参与计算；<br>
+浮动盒的区域不会叠加到BFC上；<br>
+创建BFC的方法如下：<br>
+浮动（float的值不为none）；<br>
+绝对定位元素（position的值为absolute或fixed）；<br>
+行内块（display为inline-block）
+表格单元（display为table、table-cell、table-caption等HTML表格相关属性）；<br>
+弹性盒（display为flex或inline-flex）；<br>
+overflow不为visible；<br>
+## 2、几种获得宽高的方式
+dom.style.width/height   这种方式只能取到dom元素内联样式所设置的宽高，也就是说如果该节点的样式是在style标签中或外联的CSS文件中设置的话，通过这种方法是获取不到dom的宽高的。<br>
+## 3、css reset 和 normalize.css 有什么区别
+两者都是通过重置样式，保持浏览器样式的一致性<br>
+前者几乎为所有标签添加了样式，后者保持了许多浏览器样式，保持尽可能的一致<br>
+后者修复了常见的桌面端和移动端浏览器的bug：包含了HTML5元素的显示设置、预格式化文字的font-size问题、在IE9中SVG的溢出、许多出现在各浏览器和操作系统中的与表单相关的bug。<br>
+前者中含有大段的继承链<br>
+后者模块化，文档较前者来说丰富<br>
+## 4、居中方法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

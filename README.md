@@ -87,8 +87,18 @@ dom.style.width/height   这种方式只能取到dom元素内联样式所设
 后者修复了常见的桌面端和移动端浏览器的bug：包含了HTML5元素的显示设置、预格式化文字的font-size问题、在IE9中SVG的溢出、许多出现在各浏览器和操作系统中的与表单相关的bug。<br>
 前者中含有大段的继承链<br>
 后者模块化，文档较前者来说丰富<br>
-## 4、如何清除浮动
+## 4、实现水平垂直居中的方式
+### 1、absolute + 负margin（我称其为拉回方式）
+```
+    position: absolute;;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+```
+### 2、
 # Javascript
+
 
 
 

@@ -96,7 +96,83 @@ dom.style.width/height   这种方式只能取到dom元素内联样式所设
     margin-left: -50px;
     margin-top: -50px;
 ```
-### 2、
+这种方式比较好理解，兼容性也很好，缺点是需要知道子元素的宽高
+### 2、absolute + margin auto
+```
+    position: absolute;;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+```
+这种方法兼容性也很好，缺点是需要知道子元素的宽高
+### 3、absolute + calc
+```
+position: absolute;;
+top: calc(50% - 50px);
+left: calc(50% - 50px);
+```
+这种方式的缺点也是需要知道子元素的宽高
+### 4、absolute + transform
+```
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%)
+```
+### 5、line-height text-align
+### 6、writing-mode
+```
+<div class="wp">
+    <div class="wp-inner">
+        <div class="box">123123</div>
+    </div>
+</div>
+/* 定位代码 */
+.wp {
+    writing-mode: vertical-lr;
+    text-align: center;
+}
+.wp-inner {
+    writing-mode: horizontal-tb;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+.box {
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+}
+```
+### 7、table
+tabel单元格中的内容天然就是垂直居中的，只要添加一个水平居中属性就好了
+### 8、table-cell
+```
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+```
+### 9、flex
+```
+display: flex;
+justify-content: center;
+align-items: center;
+```
+### 10、grid
+```
+<div class="wp">
+    <div class="box">123123</div>
+</div>
+.wp {
+    display: grid;
+}
+.box {
+    align-self: center;
+    justify-self: center;
+}
+```
 # Javascript
 
 
